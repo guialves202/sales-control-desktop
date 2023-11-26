@@ -98,7 +98,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="br.com.salescontrol.model\Client.cs" />
+    <Compile Include="br.com.salescontrol.connection\ConnectionFactory.cs" />
+    <Compile Include="br.com.salescontrol.dao\ClientDAO.cs" />
+    <Compile Include="br.com.salescontrol.model\Customer.cs" />
     <Compile Include="br.com.salescontrol.view\Frmclientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,9 +141,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="br.com.salescontrol.connection\" />
-    <Folder Include="br.com.salescontrol.dao\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

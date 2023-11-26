@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace salesControl.br.com.salescontrol.model
 {
-    public class Client
+    public class Customer
     {
         public int code { get; set; }
         public string name { get; set; }

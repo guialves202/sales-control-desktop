@@ -121,6 +121,7 @@
             this.clientTable.ReadOnly = true;
             this.clientTable.Size = new System.Drawing.Size(1067, 363);
             this.clientTable.TabIndex = 7;
+            this.clientTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientTable_CellClick);
             // 
             // btnSearch
             // 
@@ -490,6 +491,7 @@
             this.btnNew.TabIndex = 2;
             this.btnNew.Text = "Novo";
             this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnSave
             // 
@@ -519,6 +521,7 @@
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Excluir";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -533,6 +536,7 @@
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Editar";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // Frmclientes
             // 
