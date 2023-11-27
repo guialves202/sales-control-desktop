@@ -59,20 +59,7 @@ namespace salesControl.br.com.salescontrol.view
 
             clientTable.DataSource = customerDAO.getCustomers();
 
-            txtCode.Text = "";
-            txtName.Text = "";
-            txtRG.Text = "";
-            txtCPF.Text = "";
-            txtEmail.Text = "";
-            txtPhone.Text = "";
-            txtCellphone.Text = "";
-            txtCEP.Text = "";
-            txtAddress.Text = "";
-            txtAddressNumber.Text = "";
-            txtComplement.Text = "";
-            txtNeighborhood.Text = "";
-            txtCity.Text = "";
-            txtUF.Text = "";
+            new Helpers().ClearScreen(this);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -82,20 +69,7 @@ namespace salesControl.br.com.salescontrol.view
 
             clientTable.DataSource = customerDAO.getCustomers();
 
-            txtCode.Text = "";
-            txtName.Text = "";
-            txtRG.Text = "";
-            txtCPF.Text = "";
-            txtEmail.Text = "";
-            txtPhone.Text = "";
-            txtCellphone.Text = "";
-            txtCEP.Text = "";
-            txtAddress.Text = "";
-            txtAddressNumber.Text = "";
-            txtComplement.Text = "";
-            txtNeighborhood.Text = "";
-            txtCity.Text = "";
-            txtUF.Text = "";
+            new Helpers().ClearScreen(this);
         }
 
         private void clientTable_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -142,25 +116,55 @@ namespace salesControl.br.com.salescontrol.view
 
             clientTable.DataSource = customerDAO.getCustomers();
 
-            txtCode.Text = "";
-            txtName.Text = "";
-            txtRG.Text = "";
-            txtCPF.Text = "";
-            txtEmail.Text = "";
-            txtPhone.Text = "";
-            txtCellphone.Text = "";
-            txtCEP.Text = "";
-            txtAddress.Text = "";
-            txtAddressNumber.Text = "";
-            txtComplement.Text = "";
-            txtNeighborhood.Text = "";
-            txtCity.Text = "";
-            txtUF.Text = "";
+            new Helpers().ClearScreen(this);
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
+            new Helpers().ClearScreen(this);
+        }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string customerName = txtSearchName.Text;
+
+            CustomerDAO customerDAO = new CustomerDAO(new ConnectionFactory().getConnection());
+            clientTable.DataSource = customerDAO.getCustomerByName(customerName);
+        }
+
+        private void txtSearchName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSearchName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string customerName = txtSearchName.Text;
+
+            CustomerDAO customerDAO = new CustomerDAO(new ConnectionFactory().getConnection());
+            clientTable.DataSource = customerDAO.getCustomersByName(customerName);
+        }
+
+        private void btnSearchCEP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string cep = txtCEP.Text;
+                string xml = $"https://viacep.com.br/ws/{cep}/xml/";
+
+                DataSet cepData = new DataSet();
+                cepData.ReadXml(xml);
+
+                txtAddress.Text = cepData.Tables[0].Rows[0]["logradouro"].ToString();
+                txtComplement.Text = cepData.Tables[0].Rows[0]["complemento"].ToString();
+                txtNeighborhood.Text = cepData.Tables[0].Rows[0]["bairro"].ToString();
+                txtCity.Text = cepData.Tables[0].Rows[0]["localidade"].ToString();
+                txtUF.Text = cepData.Tables[0].Rows[0]["uf"].ToString();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Endereço não encontrado, por favor digite manualmente.");
+            }
         }
     }
 }

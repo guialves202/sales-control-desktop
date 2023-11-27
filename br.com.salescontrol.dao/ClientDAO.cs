@@ -142,5 +142,65 @@ namespace salesControl.br.com.salescontrol.dao
             }
         }
         #endregion
+
+        #region BuscarClientePorNome
+        public DataTable getCustomerByName(string customerName)
+        {
+            try
+            {
+                DataTable clientTable = new DataTable();
+                string sql = "SELECT * FROM tb_clientes WHERE nome=@nome";
+
+                MySqlCommand mysqlCommand = new MySqlCommand(sql, this._connection);
+                mysqlCommand.Parameters.AddWithValue("@nome", customerName);
+
+                this._connection.Open();
+                mysqlCommand.ExecuteNonQuery();
+
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(mysqlCommand);
+                dataAdapter.Fill(clientTable);
+
+                this._connection.Close();
+
+                return clientTable;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Erro ao buscar o cliente: " + error);
+                return null;
+            }
+        }
+        #endregion
+
+        #region ListarClientesPorNome
+        public DataTable getCustomersByName(string customerName)
+        {
+            try
+            {
+                customerName = $"%{customerName}%";
+
+                DataTable clientTable = new DataTable();
+                string sql = "SELECT * FROM tb_clientes WHERE nome LIKE @nome";
+
+                MySqlCommand mysqlCommand = new MySqlCommand(sql, this._connection);
+                mysqlCommand.Parameters.AddWithValue("@nome", customerName);
+
+                this._connection.Open();
+                mysqlCommand.ExecuteNonQuery();
+
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(mysqlCommand);
+                dataAdapter.Fill(clientTable);
+
+                this._connection.Close();
+
+                return clientTable;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Erro ao buscar os clientes: " + error);
+                return null;
+            }
+        }
+        #endregion
     }
 }

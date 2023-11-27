@@ -69,6 +69,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.btnSearchCEP = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientTable)).BeginInit();
@@ -136,6 +137,7 @@
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Pesquisar";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearchName
             // 
@@ -143,6 +145,8 @@
             this.txtSearchName.Name = "txtSearchName";
             this.txtSearchName.Size = new System.Drawing.Size(356, 26);
             this.txtSearchName.TabIndex = 5;
+            this.txtSearchName.TextChanged += new System.EventHandler(this.txtSearchName_TextChanged);
+            this.txtSearchName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchName_KeyPress);
             // 
             // label16
             // 
@@ -156,6 +160,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnSearchCEP);
             this.tabPage1.Controls.Add(this.txtUF);
             this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.txtCity);
@@ -538,6 +543,21 @@
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
+            // btnSearchCEP
+            // 
+            this.btnSearchCEP.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSearchCEP.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchCEP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchCEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchCEP.ForeColor = System.Drawing.Color.White;
+            this.btnSearchCEP.Location = new System.Drawing.Point(293, 251);
+            this.btnSearchCEP.Name = "btnSearchCEP";
+            this.btnSearchCEP.Size = new System.Drawing.Size(95, 30);
+            this.btnSearchCEP.TabIndex = 6;
+            this.btnSearchCEP.Text = "Pesquisar";
+            this.btnSearchCEP.UseVisualStyleBackColor = false;
+            this.btnSearchCEP.Click += new System.EventHandler(this.btnSearchCEP_Click);
+            // 
             // Frmclientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -608,5 +628,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearchName;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button btnSearchCEP;
     }
 }
