@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace salesControl.br.com.salescontrol.view
 {
-    public partial class Frmclientes : Form
+    public partial class Frmcustomer : Form
     {
-        public Frmclientes()
+        public Frmcustomer()
         {
             InitializeComponent();
         }
@@ -50,7 +50,7 @@ namespace salesControl.br.com.salescontrol.view
             client.addressNumber = txtAddressNumber.Text;
             client.city = txtCity.Text;
             client.neighborhood = txtNeighborhood.Text;
-            client.uf = txtUF.Text;
+            client.uf = txtUF.SelectedItem.ToString();
             client.cep = txtCEP.Text;
             client.complement = txtComplement.Text;
 
@@ -107,7 +107,7 @@ namespace salesControl.br.com.salescontrol.view
             client.addressNumber = txtAddressNumber.Text;
             client.city = txtCity.Text;
             client.neighborhood = txtNeighborhood.Text;
-            client.uf = txtUF.Text;
+            client.uf = txtUF.SelectedItem.ToString();
             client.cep = txtCEP.Text;
             client.complement = txtComplement.Text;
 

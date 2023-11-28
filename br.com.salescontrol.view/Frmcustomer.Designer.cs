@@ -1,6 +1,6 @@
 ﻿namespace salesControl.br.com.salescontrol.view
 {
-    partial class Frmclientes
+    partial class Frmcustomer
     {
         /// <summary>
         /// Required designer variable.
@@ -36,6 +36,7 @@
             this.txtSearchName = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnSearchCEP = new System.Windows.Forms.Button();
             this.txtUF = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtCity = new System.Windows.Forms.TextBox();
@@ -69,7 +70,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.btnSearchCEP = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientTable)).BeginInit();
@@ -198,6 +198,21 @@
             this.tabPage1.Text = "Dados Pessoais";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // btnSearchCEP
+            // 
+            this.btnSearchCEP.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSearchCEP.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchCEP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchCEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchCEP.ForeColor = System.Drawing.Color.White;
+            this.btnSearchCEP.Location = new System.Drawing.Point(293, 251);
+            this.btnSearchCEP.Name = "btnSearchCEP";
+            this.btnSearchCEP.Size = new System.Drawing.Size(95, 30);
+            this.btnSearchCEP.TabIndex = 6;
+            this.btnSearchCEP.Text = "Pesquisar";
+            this.btnSearchCEP.UseVisualStyleBackColor = false;
+            this.btnSearchCEP.Click += new System.EventHandler(this.btnSearchCEP_Click);
             // 
             // txtUF
             // 
@@ -490,7 +505,7 @@
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.ForeColor = System.Drawing.Color.White;
-            this.btnNew.Location = new System.Drawing.Point(148, 605);
+            this.btnNew.Location = new System.Drawing.Point(155, 605);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(163, 53);
             this.btnNew.TabIndex = 2;
@@ -505,7 +520,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(363, 605);
+            this.btnSave.Location = new System.Drawing.Point(370, 605);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(163, 53);
             this.btnSave.TabIndex = 3;
@@ -520,7 +535,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(574, 605);
+            this.btnDelete.Location = new System.Drawing.Point(581, 605);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(163, 53);
             this.btnDelete.TabIndex = 4;
@@ -535,28 +550,13 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(782, 605);
+            this.btnEdit.Location = new System.Drawing.Point(789, 605);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(163, 53);
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Editar";
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnSearchCEP
-            // 
-            this.btnSearchCEP.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSearchCEP.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchCEP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchCEP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchCEP.ForeColor = System.Drawing.Color.White;
-            this.btnSearchCEP.Location = new System.Drawing.Point(293, 251);
-            this.btnSearchCEP.Name = "btnSearchCEP";
-            this.btnSearchCEP.Size = new System.Drawing.Size(95, 30);
-            this.btnSearchCEP.TabIndex = 6;
-            this.btnSearchCEP.Text = "Pesquisar";
-            this.btnSearchCEP.UseVisualStyleBackColor = false;
-            this.btnSearchCEP.Click += new System.EventHandler(this.btnSearchCEP_Click);
             // 
             // Frmclientes
             // 
