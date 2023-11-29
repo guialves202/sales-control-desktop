@@ -237,6 +237,7 @@
             this.btnSearchCEP.TabIndex = 6;
             this.btnSearchCEP.Text = "Pesquisar";
             this.btnSearchCEP.UseVisualStyleBackColor = false;
+            this.btnSearchCEP.Click += new System.EventHandler(this.btnSearchCEP_Click);
             // 
             // txtUF
             // 
@@ -534,6 +535,7 @@
             this.employeesTable.ReadOnly = true;
             this.employeesTable.Size = new System.Drawing.Size(1067, 463);
             this.employeesTable.TabIndex = 7;
+            this.employeesTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeesTable_CellContentClick);
             // 
             // btnSearch
             // 
@@ -548,6 +550,7 @@
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Pesquisar";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearchName
             // 
@@ -555,6 +558,7 @@
             this.txtSearchName.Name = "txtSearchName";
             this.txtSearchName.Size = new System.Drawing.Size(356, 26);
             this.txtSearchName.TabIndex = 5;
+            this.txtSearchName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchName_KeyPress);
             // 
             // label16
             // 
@@ -579,6 +583,7 @@
             this.btnEdit.TabIndex = 31;
             this.btnEdit.Text = "Editar";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -593,6 +598,7 @@
             this.btnDelete.TabIndex = 30;
             this.btnDelete.Text = "Excluir";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -622,6 +628,7 @@
             this.btnNew.TabIndex = 28;
             this.btnNew.Text = "Novo";
             this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // Frmemployees
             // 
@@ -636,6 +643,7 @@
             this.Controls.Add(this.btnNew);
             this.Name = "Frmemployees";
             this.Text = "Cadastro de Funcionários";
+            this.Load += new System.EventHandler(this.Frmemployees_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabEmployees.ResumeLayout(false);

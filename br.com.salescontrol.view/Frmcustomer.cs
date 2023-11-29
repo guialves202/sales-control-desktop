@@ -166,5 +166,10 @@ namespace salesControl.br.com.salescontrol.view
                 MessageBox.Show("Endereço não encontrado, por favor digite manualmente.");
             }
         }
+
+        private void clientTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

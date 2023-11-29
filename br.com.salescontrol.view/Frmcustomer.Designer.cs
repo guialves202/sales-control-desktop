@@ -123,6 +123,7 @@
             this.clientTable.Size = new System.Drawing.Size(1067, 363);
             this.clientTable.TabIndex = 7;
             this.clientTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientTable_CellClick);
+            this.clientTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientTable_CellContentClick);
             // 
             // btnSearch
             // 
@@ -558,7 +559,7 @@
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // Frmclientes
+            // Frmcustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -569,7 +570,7 @@
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.tabClients);
             this.Controls.Add(this.panel1);
-            this.Name = "Frmclientes";
+            this.Name = "Frmcustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Clientes";
             this.Load += new System.EventHandler(this.Frmclientes_Load);
