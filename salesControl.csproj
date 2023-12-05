@@ -101,8 +101,10 @@
     <Compile Include="br.com.salescontrol.connection\ConnectionFactory.cs" />
     <Compile Include="br.com.salescontrol.dao\CustomerDAO.cs" />
     <Compile Include="br.com.salescontrol.dao\EmployeeDAO.cs" />
+    <Compile Include="br.com.salescontrol.dao\SupplierDAO.cs" />
     <Compile Include="br.com.salescontrol.model\Customer.cs" />
     <Compile Include="br.com.salescontrol.model\Employee.cs" />
+    <Compile Include="br.com.salescontrol.model\Supplier.cs" />
     <Compile Include="br.com.salescontrol.view\Frmsupplier.cs">
       <SubType>Form</SubType>
     </Compile>

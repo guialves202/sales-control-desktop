@@ -438,6 +438,7 @@
             this.supplierTable.ReadOnly = true;
             this.supplierTable.Size = new System.Drawing.Size(1067, 363);
             this.supplierTable.TabIndex = 7;
+            this.supplierTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.supplierTable_CellClick);
             this.supplierTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientTable_CellContentClick);
             // 
             // btnSearch
@@ -453,6 +454,7 @@
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Pesquisar";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearchName
             // 
@@ -460,6 +462,7 @@
             this.txtSearchName.Name = "txtSearchName";
             this.txtSearchName.Size = new System.Drawing.Size(356, 26);
             this.txtSearchName.TabIndex = 5;
+            this.txtSearchName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchName_KeyPress);
             // 
             // label16
             // 
@@ -484,6 +487,7 @@
             this.btnEdit.TabIndex = 9;
             this.btnEdit.Text = "Editar";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -498,6 +502,7 @@
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Excluir";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -512,6 +517,7 @@
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Salvar";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnNew
             // 
@@ -541,6 +547,7 @@
             this.Controls.Add(this.btnNew);
             this.Name = "Frmsupplier";
             this.Text = "Frmsupplier";
+            this.Load += new System.EventHandler(this.Frmsupplier_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabSupplier.ResumeLayout(false);
