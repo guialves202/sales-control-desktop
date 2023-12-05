@@ -1,6 +1,6 @@
 ﻿namespace salesControl.br.com.salescontrol.view
 {
-    partial class Frmcustomer
+    partial class Frmsupplier
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.clientTable = new System.Windows.Forms.DataGridView();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearchName = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tabSupplier = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnSearchCEP = new System.Windows.Forms.Button();
             this.txtUF = new System.Windows.Forms.ComboBox();
@@ -55,7 +51,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtRG = new System.Windows.Forms.MaskedTextBox();
+            this.txtCNPJ = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -63,19 +59,32 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tabClients = new System.Windows.Forms.TabControl();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.supplierTable = new System.Windows.Forms.DataGridView();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearchName = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtCPF = new System.Windows.Forms.MaskedTextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientTable)).BeginInit();
+            this.tabSupplier.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabClients.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierTable)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(33, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(285, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Cadastro de Fornecedores";
             // 
             // panel1
             // 
@@ -85,79 +94,18 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1118, 100);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
-            // label1
+            // tabSupplier
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(33, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Cadastro de Clientes";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.clientTable);
-            this.tabPage2.Controls.Add(this.btnSearch);
-            this.tabPage2.Controls.Add(this.txtSearchName);
-            this.tabPage2.Controls.Add(this.label16);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1092, 448);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Consulta";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // clientTable
-            // 
-            this.clientTable.AllowUserToAddRows = false;
-            this.clientTable.AllowUserToDeleteRows = false;
-            this.clientTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.clientTable.Location = new System.Drawing.Point(14, 74);
-            this.clientTable.Name = "clientTable";
-            this.clientTable.ReadOnly = true;
-            this.clientTable.Size = new System.Drawing.Size(1067, 363);
-            this.clientTable.TabIndex = 7;
-            this.clientTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientTable_CellClick);
-            this.clientTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientTable_CellContentClick);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(489, 22);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(145, 41);
-            this.btnSearch.TabIndex = 6;
-            this.btnSearch.Text = "Pesquisar";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtSearchName
-            // 
-            this.txtSearchName.Location = new System.Drawing.Point(112, 31);
-            this.txtSearchName.Name = "txtSearchName";
-            this.txtSearchName.Size = new System.Drawing.Size(356, 26);
-            this.txtSearchName.TabIndex = 5;
-            this.txtSearchName.TextChanged += new System.EventHandler(this.txtSearchName_TextChanged);
-            this.txtSearchName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearchName_KeyPress);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label16.Location = new System.Drawing.Point(43, 34);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(55, 20);
-            this.label16.TabIndex = 4;
-            this.label16.Text = "Nome:";
+            this.tabSupplier.Controls.Add(this.tabPage1);
+            this.tabSupplier.Controls.Add(this.tabPage2);
+            this.tabSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabSupplier.Location = new System.Drawing.Point(10, 106);
+            this.tabSupplier.Name = "tabSupplier";
+            this.tabSupplier.SelectedIndex = 0;
+            this.tabSupplier.Size = new System.Drawing.Size(1100, 481);
+            this.tabSupplier.TabIndex = 2;
             // 
             // tabPage1
             // 
@@ -180,9 +128,7 @@
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.txtPhone);
             this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.txtCPF);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.txtRG);
+            this.tabPage1.Controls.Add(this.txtCNPJ);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.txtEmail);
             this.tabPage1.Controls.Add(this.label4);
@@ -198,7 +144,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dados Pessoais";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // btnSearchCEP
             // 
@@ -400,14 +345,13 @@
             this.label7.TabIndex = 10;
             this.label7.Text = "Telefone:";
             // 
-            // txtRG
+            // txtCNPJ
             // 
-            this.txtRG.Location = new System.Drawing.Point(533, 68);
-            this.txtRG.Mask = "00,000,000-0";
-            this.txtRG.Name = "txtRG";
-            this.txtRG.Size = new System.Drawing.Size(172, 26);
-            this.txtRG.TabIndex = 7;
-            this.txtRG.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            this.txtCNPJ.Location = new System.Drawing.Point(542, 68);
+            this.txtCNPJ.Mask = "00,000,000/0000-00";
+            this.txtCNPJ.Name = "txtCNPJ";
+            this.txtCNPJ.Size = new System.Drawing.Size(172, 26);
+            this.txtCNPJ.TabIndex = 7;
             // 
             // label5
             // 
@@ -415,9 +359,9 @@
             this.label5.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label5.Location = new System.Drawing.Point(485, 71);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 20);
+            this.label5.Size = new System.Drawing.Size(53, 20);
             this.label5.TabIndex = 6;
-            this.label5.Text = "RG:";
+            this.label5.Text = "CNPJ:";
             // 
             // txtEmail
             // 
@@ -470,61 +414,62 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Código:";
             // 
-            // tabClients
+            // tabPage2
             // 
-            this.tabClients.Controls.Add(this.tabPage1);
-            this.tabClients.Controls.Add(this.tabPage2);
-            this.tabClients.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabClients.Location = new System.Drawing.Point(8, 109);
-            this.tabClients.Name = "tabClients";
-            this.tabClients.SelectedIndex = 0;
-            this.tabClients.Size = new System.Drawing.Size(1100, 481);
-            this.tabClients.TabIndex = 1;
+            this.tabPage2.Controls.Add(this.supplierTable);
+            this.tabPage2.Controls.Add(this.btnSearch);
+            this.tabPage2.Controls.Add(this.txtSearchName);
+            this.tabPage2.Controls.Add(this.label16);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1092, 448);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Consulta";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btnNew
+            // supplierTable
             // 
-            this.btnNew.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnNew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.ForeColor = System.Drawing.Color.White;
-            this.btnNew.Location = new System.Drawing.Point(155, 605);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(163, 53);
-            this.btnNew.TabIndex = 2;
-            this.btnNew.Text = "Novo";
-            this.btnNew.UseVisualStyleBackColor = false;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            this.supplierTable.AllowUserToAddRows = false;
+            this.supplierTable.AllowUserToDeleteRows = false;
+            this.supplierTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.supplierTable.Location = new System.Drawing.Point(14, 74);
+            this.supplierTable.Name = "supplierTable";
+            this.supplierTable.ReadOnly = true;
+            this.supplierTable.Size = new System.Drawing.Size(1067, 363);
+            this.supplierTable.TabIndex = 7;
+            this.supplierTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clientTable_CellContentClick);
             // 
-            // btnSave
+            // btnSearch
             // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(370, 605);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(163, 53);
-            this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "Salvar";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSearch.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(489, 22);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(145, 41);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Text = "Pesquisar";
+            this.btnSearch.UseVisualStyleBackColor = false;
             // 
-            // btnDelete
+            // txtSearchName
             // 
-            this.btnDelete.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(581, 605);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(163, 53);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "Excluir";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.txtSearchName.Location = new System.Drawing.Point(112, 31);
+            this.txtSearchName.Name = "txtSearchName";
+            this.txtSearchName.Size = new System.Drawing.Size(356, 26);
+            this.txtSearchName.TabIndex = 5;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label16.Location = new System.Drawing.Point(43, 34);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(55, 20);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Nome:";
             // 
             // btnEdit
             // 
@@ -533,74 +478,88 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(789, 605);
+            this.btnEdit.Location = new System.Drawing.Point(792, 605);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(163, 53);
-            this.btnEdit.TabIndex = 5;
+            this.btnEdit.TabIndex = 9;
             this.btnEdit.Text = "Editar";
             this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // label6
+            // btnDelete
             // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label6.Location = new System.Drawing.Point(727, 72);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 20);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "CPF:";
+            this.btnDelete.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(584, 605);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(163, 53);
+            this.btnDelete.TabIndex = 8;
+            this.btnDelete.Text = "Excluir";
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
-            // txtCPF
+            // btnSave
             // 
-            this.txtCPF.Location = new System.Drawing.Point(784, 69);
-            this.txtCPF.Mask = "000,000,000-00";
-            this.txtCPF.Name = "txtCPF";
-            this.txtCPF.Size = new System.Drawing.Size(172, 26);
-            this.txtCPF.TabIndex = 9;
+            this.btnSave.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(373, 605);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(163, 53);
+            this.btnSave.TabIndex = 7;
+            this.btnSave.Text = "Salvar";
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
-            // Frmcustomer
+            // btnNew
+            // 
+            this.btnNew.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnNew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.ForeColor = System.Drawing.Color.White;
+            this.btnNew.Location = new System.Drawing.Point(158, 605);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(163, 53);
+            this.btnNew.TabIndex = 6;
+            this.btnNew.Text = "Novo";
+            this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // Frmsupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1118, 670);
             this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.tabSupplier);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnNew);
-            this.Controls.Add(this.tabClients);
             this.Controls.Add(this.panel1);
-            this.Name = "Frmcustomer";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro de Clientes";
-            this.Load += new System.EventHandler(this.Frmclientes_Load);
+            this.Controls.Add(this.btnNew);
+            this.Name = "Frmsupplier";
+            this.Text = "Frmsupplier";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientTable)).EndInit();
+            this.tabSupplier.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabClients.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierTable)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TabControl tabSupplier;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabControl tabClients;
-        private System.Windows.Forms.MaskedTextBox txtRG;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCode;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnSearchCEP;
         private System.Windows.Forms.ComboBox txtUF;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtCity;
@@ -619,16 +578,22 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.MaskedTextBox txtPhone;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.DataGridView clientTable;
+        private System.Windows.Forms.MaskedTextBox txtCNPJ;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtCode;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView supplierTable;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearchName;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button btnSearchCEP;
-        private System.Windows.Forms.MaskedTextBox txtCPF;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnNew;
     }
 }

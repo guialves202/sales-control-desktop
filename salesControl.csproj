@@ -103,6 +103,12 @@
     <Compile Include="br.com.salescontrol.dao\EmployeeDAO.cs" />
     <Compile Include="br.com.salescontrol.model\Customer.cs" />
     <Compile Include="br.com.salescontrol.model\Employee.cs" />
+    <Compile Include="br.com.salescontrol.view\Frmsupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="br.com.salescontrol.view\Frmsupplier.Designer.cs">
+      <DependentUpon>Frmsupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Enums\EmployeeAccessLevel.cs" />
     <Compile Include="br.com.salescontrol.model\Helpers.cs" />
     <Compile Include="br.com.salescontrol.view\Frmcustomer.cs">
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="br.com.salescontrol.view\Frmemployees.resx">
       <DependentUpon>Frmemployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="br.com.salescontrol.view\Frmsupplier.resx">
+      <DependentUpon>Frmsupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
