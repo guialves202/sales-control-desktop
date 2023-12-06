@@ -160,5 +160,15 @@ namespace salesControl.br.com.salescontrol.view
             SupplierDAO supplierDAO = new SupplierDAO(new ConnectionFactory().getConnection());
             supplierTable.DataSource = supplierDAO.getSuppliers();
         }
+
+        private void txtCNPJ_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
