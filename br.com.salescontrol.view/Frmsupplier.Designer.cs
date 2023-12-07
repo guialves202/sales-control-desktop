@@ -548,7 +548,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnNew);
             this.Name = "Frmsupplier";
-            this.Text = "Frmsupplier";
+            this.Text = "Tela de Fornecedores";
             this.Load += new System.EventHandler(this.Frmsupplier_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -17,7 +17,7 @@ namespace salesControl
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frmproduct());
+            Application.Run(new Frmsale());
         }
     }
 }

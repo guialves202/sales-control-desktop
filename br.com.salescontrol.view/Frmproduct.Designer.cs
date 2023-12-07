@@ -32,6 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabProduct = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtSupplier = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtStock = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -47,10 +51,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
-            this.txtStock = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtSupplier = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.tabProduct.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -110,6 +110,41 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dados Pessoais";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // txtSupplier
+            // 
+            this.txtSupplier.FormattingEnabled = true;
+            this.txtSupplier.Location = new System.Drawing.Point(132, 172);
+            this.txtSupplier.Name = "txtSupplier";
+            this.txtSupplier.Size = new System.Drawing.Size(356, 28);
+            this.txtSupplier.TabIndex = 28;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label6.Location = new System.Drawing.Point(27, 176);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 20);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Fornecedor:";
+            // 
+            // txtStock
+            // 
+            this.txtStock.Location = new System.Drawing.Point(132, 122);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Size = new System.Drawing.Size(356, 26);
+            this.txtStock.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label5.Location = new System.Drawing.Point(23, 125);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(105, 20);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Qtd. estoque:";
             // 
             // txtPrice
             // 
@@ -282,41 +317,6 @@
             this.btnNew.UseVisualStyleBackColor = false;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click_1);
             // 
-            // txtStock
-            // 
-            this.txtStock.Location = new System.Drawing.Point(132, 122);
-            this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(356, 26);
-            this.txtStock.TabIndex = 7;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label5.Location = new System.Drawing.Point(23, 125);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 20);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Qtd. estoque:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label6.Location = new System.Drawing.Point(27, 176);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 20);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Fornecedor:";
-            // 
-            // txtSupplier
-            // 
-            this.txtSupplier.FormattingEnabled = true;
-            this.txtSupplier.Location = new System.Drawing.Point(132, 172);
-            this.txtSupplier.Name = "txtSupplier";
-            this.txtSupplier.Size = new System.Drawing.Size(356, 28);
-            this.txtSupplier.TabIndex = 28;
-            // 
             // Frmproduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,7 +329,7 @@
             this.Controls.Add(this.tabProduct);
             this.Controls.Add(this.panel1);
             this.Name = "Frmproduct";
-            this.Text = "Frmproduct";
+            this.Text = "Tela de Produtos";
             this.Load += new System.EventHandler(this.Frmproduct_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

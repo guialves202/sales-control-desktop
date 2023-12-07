@@ -113,6 +113,12 @@
     <Compile Include="br.com.salescontrol.view\Frmproduct.Designer.cs">
       <DependentUpon>Frmproduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="br.com.salescontrol.view\Frmsale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="br.com.salescontrol.view\Frmsale.Designer.cs">
+      <DependentUpon>Frmsale.cs</DependentUpon>
+    </Compile>
     <Compile Include="br.com.salescontrol.view\Frmsupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="br.com.salescontrol.view\Frmproduct.resx">
       <DependentUpon>Frmproduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="br.com.salescontrol.view\Frmsale.resx">
+      <DependentUpon>Frmsale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="br.com.salescontrol.view\Frmsupplier.resx">
       <DependentUpon>Frmsupplier.cs</DependentUpon>
