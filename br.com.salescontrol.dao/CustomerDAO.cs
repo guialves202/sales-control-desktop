@@ -202,5 +202,52 @@ namespace salesControl.br.com.salescontrol.dao
             }
         }
         #endregion
+
+        #region BuscarClientePorCPF
+        public Customer getCustomerByCPF(string cpf)
+        {
+            try
+            {
+                Customer customer = new Customer();
+
+                string sql = "SELECT * FROM tb_clientes WHERE cpf = @cpf";
+                MySqlCommand mysqlCommand = new MySqlCommand(sql, this._connection);
+                mysqlCommand.Parameters.AddWithValue("@cpf", cpf);
+
+                this._connection.Open();
+                MySqlDataReader dataReader = mysqlCommand.ExecuteReader();
+
+                if (dataReader.Read())
+                {
+                    customer.code = dataReader.GetInt32("id");
+                    customer.name = dataReader.GetString("nome");
+                    customer.rg = dataReader.GetString("rg");
+                    customer.cpf = dataReader.GetString("cpf");
+                    customer.email = dataReader.GetString("email");
+                    customer.phone = dataReader.GetString("telefone");
+                    customer.cellphone = dataReader.GetString("celular");
+                    customer.cep = dataReader.GetString("cep");
+                    customer.address = dataReader.GetString("endereco");
+                    customer.addressNumber = dataReader.GetString("numero");
+                    customer.complement = dataReader.GetString("complemento");
+                    customer.city = dataReader.GetString("bairro");
+                    customer.neighborhood = dataReader.GetString("cidade");
+                    customer.uf = dataReader.GetString("estado");
+
+                    return customer;
+                }
+                else
+                {
+                    MessageBox.Show("Cliente não encontrado.");
+                    return null;
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Erro ao buscar cliente: " + error);
+                return null;
+            }
+        }
+        #endregion
     }
 }
