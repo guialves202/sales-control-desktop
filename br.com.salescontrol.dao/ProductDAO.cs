@@ -23,7 +23,7 @@ namespace salesControl.br.com.salescontrol.dao
         {
             try
             {
-                string sql = "INSERT INTO tb_produtos (nome, preco, qtd_estoque, for_id) VALUES (@nome, @preco, @qtd_estoque, @for_id)";
+                string sql = "INSERT INTO (nome, preco, qtd_estoque, for_id) VALUES (@nome, @preco, @qtd_estoque, @for_id)";
                 MySqlCommand mysqlCommand = new MySqlCommand(sql, this._connection);
                 mysqlCommand.Parameters.AddWithValue("@nome", product.name);
                 mysqlCommand.Parameters.AddWithValue("@preco", product.price);
@@ -171,6 +171,44 @@ namespace salesControl.br.com.salescontrol.dao
 
                 this._connection.Close();
                 return productTable;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Erro ao buscar produto: " + error);
+                return null;
+            }
+        }
+        #endregion
+
+        #region BuscarProdutoPorId
+        public Product getProductById(int productId)
+        {
+            try
+            {
+                string sql = "SELECT * FROM tb_produtos WHERE id = @id";
+                MySqlCommand mysqlCommand = new MySqlCommand(sql, this._connection);
+                mysqlCommand.Parameters.AddWithValue("@id", productId);
+
+                this._connection.Open();
+                MySqlDataReader dataReader = mysqlCommand.ExecuteReader();
+
+                if (dataReader.Read())
+                {
+                    Product product = new Product();
+
+                    product.code = dataReader.GetInt32("id");
+                    product.name = dataReader.GetString("nome");
+                    product.price = dataReader.GetDecimal("preco");
+                    product.stockQuantity = dataReader.GetInt32("qtd_estoque");
+                    
+                    return product;
+                }
+                else
+                {
+                    MessageBox.Show("Produto não encontrado.");
+                    return null;
+                }
+
             }
             catch (Exception error)
             {
