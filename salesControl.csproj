@@ -102,10 +102,13 @@
     <Compile Include="br.com.salescontrol.dao\CustomerDAO.cs" />
     <Compile Include="br.com.salescontrol.dao\EmployeeDAO.cs" />
     <Compile Include="br.com.salescontrol.dao\ProductDAO.cs" />
+    <Compile Include="br.com.salescontrol.dao\SaleDAO.cs" />
     <Compile Include="br.com.salescontrol.dao\SupplierDAO.cs" />
     <Compile Include="br.com.salescontrol.model\Customer.cs" />
     <Compile Include="br.com.salescontrol.model\Employee.cs" />
     <Compile Include="br.com.salescontrol.model\Product.cs" />
+    <Compile Include="br.com.salescontrol.model\Sale.cs" />
+    <Compile Include="br.com.salescontrol.model\SaleProducts.cs" />
     <Compile Include="br.com.salescontrol.model\Supplier.cs" />
     <Compile Include="br.com.salescontrol.view\Frmproduct.cs">
       <SubType>Form</SubType>

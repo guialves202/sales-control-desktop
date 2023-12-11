@@ -31,6 +31,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.gpCustomer = new System.Windows.Forms.GroupBox();
+            this.txtDate = new System.Windows.Forms.MaskedTextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
@@ -52,8 +54,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnPayment = new System.Windows.Forms.Button();
             this.btnCancelSale = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtDate = new System.Windows.Forms.MaskedTextBox();
+            this.btnSearchCPF = new System.Windows.Forms.Button();
+            this.btnSearchProductCode = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.gpCustomer.SuspendLayout();
             this.gpProduct.SuspendLayout();
@@ -84,6 +86,7 @@
             // 
             // gpCustomer
             // 
+            this.gpCustomer.Controls.Add(this.btnSearchCPF);
             this.gpCustomer.Controls.Add(this.txtDate);
             this.gpCustomer.Controls.Add(this.label9);
             this.gpCustomer.Controls.Add(this.txtCustomerName);
@@ -96,6 +99,26 @@
             this.gpCustomer.TabIndex = 3;
             this.gpCustomer.TabStop = false;
             this.gpCustomer.Text = "Cliente";
+            // 
+            // txtDate
+            // 
+            this.txtDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtDate.Location = new System.Drawing.Point(84, 38);
+            this.txtDate.Mask = "00/00/0000";
+            this.txtDate.Name = "txtDate";
+            this.txtDate.Size = new System.Drawing.Size(142, 26);
+            this.txtDate.TabIndex = 14;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label9.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label9.Location = new System.Drawing.Point(22, 41);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(48, 20);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Data:";
             // 
             // txtCustomerName
             // 
@@ -125,6 +148,7 @@
             this.txtCPF.Size = new System.Drawing.Size(142, 26);
             this.txtCPF.TabIndex = 11;
             this.txtCPF.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtCPF_MaskInputRejected);
+            this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPF_KeyPress);
             // 
             // label6
             // 
@@ -139,6 +163,7 @@
             // 
             // gpProduct
             // 
+            this.gpProduct.Controls.Add(this.btnSearchProductCode);
             this.gpProduct.Controls.Add(this.btnRemove);
             this.gpProduct.Controls.Add(this.btnAdd);
             this.gpProduct.Controls.Add(this.txtPrice);
@@ -210,6 +235,8 @@
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(111, 26);
             this.txtQuantity.TabIndex = 13;
+            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
+            this.txtQuantity.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtQuantity_KeyUp);
             // 
             // label5
             // 
@@ -248,6 +275,7 @@
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(142, 26);
             this.txtCode.TabIndex = 9;
+            this.txtCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCode_KeyPress);
             // 
             // label4
             // 
@@ -325,25 +353,35 @@
             this.btnCancelSale.Text = "Cancelar";
             this.btnCancelSale.UseVisualStyleBackColor = false;
             // 
-            // label9
+            // btnSearchCPF
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label9.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label9.Location = new System.Drawing.Point(22, 41);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(48, 20);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Data:";
+            this.btnSearchCPF.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSearchCPF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchCPF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchCPF.ForeColor = System.Drawing.Color.White;
+            this.btnSearchCPF.Location = new System.Drawing.Point(235, 83);
+            this.btnSearchCPF.Name = "btnSearchCPF";
+            this.btnSearchCPF.Size = new System.Drawing.Size(95, 30);
+            this.btnSearchCPF.TabIndex = 15;
+            this.btnSearchCPF.Text = "Pesquisar";
+            this.btnSearchCPF.UseVisualStyleBackColor = false;
+            this.btnSearchCPF.Click += new System.EventHandler(this.btnSearchCEP_Click);
             // 
-            // txtDate
+            // btnSearchProductCode
             // 
-            this.txtDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtDate.Location = new System.Drawing.Point(84, 38);
-            this.txtDate.Mask = "00/00/0000";
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(142, 26);
-            this.txtDate.TabIndex = 14;
+            this.btnSearchProductCode.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSearchProductCode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchProductCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchProductCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchProductCode.ForeColor = System.Drawing.Color.White;
+            this.btnSearchProductCode.Location = new System.Drawing.Point(235, 26);
+            this.btnSearchProductCode.Name = "btnSearchProductCode";
+            this.btnSearchProductCode.Size = new System.Drawing.Size(95, 30);
+            this.btnSearchProductCode.TabIndex = 16;
+            this.btnSearchProductCode.Text = "Pesquisar";
+            this.btnSearchProductCode.UseVisualStyleBackColor = false;
+            this.btnSearchProductCode.Click += new System.EventHandler(this.btnSearchProductCode_Click);
             // 
             // Frmsale
             // 
@@ -400,5 +438,7 @@
         private System.Windows.Forms.Button btnCancelSale;
         private System.Windows.Forms.MaskedTextBox txtDate;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnSearchCPF;
+        private System.Windows.Forms.Button btnSearchProductCode;
     }
 }
