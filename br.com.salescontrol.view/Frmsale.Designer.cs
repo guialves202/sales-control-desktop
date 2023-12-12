@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.gpCustomer = new System.Windows.Forms.GroupBox();
+            this.btnSearchCPF = new System.Windows.Forms.Button();
             this.txtDate = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
@@ -38,6 +39,7 @@
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.gpProduct = new System.Windows.Forms.GroupBox();
+            this.btnSearchProductCode = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtPrice = new System.Windows.Forms.TextBox();
@@ -50,12 +52,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.productTable = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnPayment = new System.Windows.Forms.Button();
             this.btnCancelSale = new System.Windows.Forms.Button();
-            this.btnSearchCPF = new System.Windows.Forms.Button();
-            this.btnSearchProductCode = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.gpCustomer.SuspendLayout();
             this.gpProduct.SuspendLayout();
@@ -99,6 +99,21 @@
             this.gpCustomer.TabIndex = 3;
             this.gpCustomer.TabStop = false;
             this.gpCustomer.Text = "Cliente";
+            // 
+            // btnSearchCPF
+            // 
+            this.btnSearchCPF.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSearchCPF.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchCPF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchCPF.ForeColor = System.Drawing.Color.White;
+            this.btnSearchCPF.Location = new System.Drawing.Point(235, 83);
+            this.btnSearchCPF.Name = "btnSearchCPF";
+            this.btnSearchCPF.Size = new System.Drawing.Size(95, 30);
+            this.btnSearchCPF.TabIndex = 15;
+            this.btnSearchCPF.Text = "Pesquisar";
+            this.btnSearchCPF.UseVisualStyleBackColor = false;
+            this.btnSearchCPF.Click += new System.EventHandler(this.btnSearchCEP_Click);
             // 
             // txtDate
             // 
@@ -181,6 +196,21 @@
             this.gpProduct.TabStop = false;
             this.gpProduct.Text = "Produto";
             // 
+            // btnSearchProductCode
+            // 
+            this.btnSearchProductCode.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSearchProductCode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchProductCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchProductCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchProductCode.ForeColor = System.Drawing.Color.White;
+            this.btnSearchProductCode.Location = new System.Drawing.Point(235, 26);
+            this.btnSearchProductCode.Name = "btnSearchProductCode";
+            this.btnSearchProductCode.Size = new System.Drawing.Size(95, 30);
+            this.btnSearchProductCode.TabIndex = 16;
+            this.btnSearchProductCode.Text = "Pesquisar";
+            this.btnSearchProductCode.UseVisualStyleBackColor = false;
+            this.btnSearchProductCode.Click += new System.EventHandler(this.btnSearchProductCode_Click);
+            // 
             // btnRemove
             // 
             this.btnRemove.BackColor = System.Drawing.SystemColors.Highlight;
@@ -194,6 +224,7 @@
             this.btnRemove.TabIndex = 16;
             this.btnRemove.Text = "Remover Item";
             this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnAdd
             // 
@@ -208,6 +239,7 @@
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "Adicionar Item";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtPrice
             // 
@@ -290,15 +322,18 @@
             // 
             // productTable
             // 
+            this.productTable.AllowUserToAddRows = false;
+            this.productTable.AllowUserToDeleteRows = false;
             this.productTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productTable.Location = new System.Drawing.Point(529, 124);
             this.productTable.Name = "productTable";
+            this.productTable.ReadOnly = true;
             this.productTable.Size = new System.Drawing.Size(573, 409);
             this.productTable.TabIndex = 5;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtTotal);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Location = new System.Drawing.Point(529, 539);
             this.groupBox1.Name = "groupBox1";
@@ -306,13 +341,13 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
-            // textBox1
+            // txtTotal
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox1.Location = new System.Drawing.Point(247, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(187, 26);
-            this.textBox1.TabIndex = 6;
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtTotal.Location = new System.Drawing.Point(247, 27);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(187, 26);
+            this.txtTotal.TabIndex = 6;
             // 
             // label8
             // 
@@ -353,36 +388,6 @@
             this.btnCancelSale.Text = "Cancelar";
             this.btnCancelSale.UseVisualStyleBackColor = false;
             // 
-            // btnSearchCPF
-            // 
-            this.btnSearchCPF.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSearchCPF.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchCPF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchCPF.ForeColor = System.Drawing.Color.White;
-            this.btnSearchCPF.Location = new System.Drawing.Point(235, 83);
-            this.btnSearchCPF.Name = "btnSearchCPF";
-            this.btnSearchCPF.Size = new System.Drawing.Size(95, 30);
-            this.btnSearchCPF.TabIndex = 15;
-            this.btnSearchCPF.Text = "Pesquisar";
-            this.btnSearchCPF.UseVisualStyleBackColor = false;
-            this.btnSearchCPF.Click += new System.EventHandler(this.btnSearchCEP_Click);
-            // 
-            // btnSearchProductCode
-            // 
-            this.btnSearchProductCode.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSearchProductCode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearchProductCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchProductCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchProductCode.ForeColor = System.Drawing.Color.White;
-            this.btnSearchProductCode.Location = new System.Drawing.Point(235, 26);
-            this.btnSearchProductCode.Name = "btnSearchProductCode";
-            this.btnSearchProductCode.Size = new System.Drawing.Size(95, 30);
-            this.btnSearchProductCode.TabIndex = 16;
-            this.btnSearchProductCode.Text = "Pesquisar";
-            this.btnSearchProductCode.UseVisualStyleBackColor = false;
-            this.btnSearchProductCode.Click += new System.EventHandler(this.btnSearchProductCode_Click);
-            // 
             // Frmsale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -397,6 +402,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Frmsale";
             this.Text = "Tela de Vendas";
+            this.Load += new System.EventHandler(this.Frmsale_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.gpCustomer.ResumeLayout(false);
@@ -431,7 +437,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView productTable;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnPayment;
         private System.Windows.Forms.Button btnRemove;

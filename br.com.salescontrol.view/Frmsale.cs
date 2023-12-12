@@ -15,6 +15,8 @@ namespace salesControl.br.com.salescontrol.view
 {
     public partial class Frmsale : Form
     {
+        public decimal total;
+        public DataTable cart = new DataTable();
         public Frmsale()
         {
             InitializeComponent();
@@ -98,6 +100,52 @@ namespace salesControl.br.com.salescontrol.view
             if (product == null) { return; }
 
             txtPrice.Text = (product.price * quantity).ToString();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            int code = int.Parse(txtCode.Text);
+            int qtd = int.Parse(txtQuantity.Text);
+
+            ProductDAO productDAO = new ProductDAO(new ConnectionFactory().getConnection());
+            Product product = productDAO.getProductById(code);
+
+            decimal subtotal = qtd * product.price;
+
+            this.total += subtotal;
+
+            this.cart.Rows.Add(product.code, product.name, qtd, product.price, subtotal);
+
+            txtTotal.Text = total.ToString();
+
+            txtCode.Clear();
+            txtProductName.Clear();
+            txtQuantity.Clear();
+            txtPrice.Clear();
+
+            txtCode.Focus();
+        }
+
+        private void Frmsale_Load(object sender, EventArgs e)
+        {
+            this.cart.Columns.Add("Código", typeof(int));
+            this.cart.Columns.Add("Produto", typeof(string));
+            this.cart.Columns.Add("Qtd", typeof(int));
+            this.cart.Columns.Add("Preço", typeof(decimal));
+            this.cart.Columns.Add("Subtotal", typeof(decimal));
+
+            productTable.DataSource = this.cart;
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            decimal subtotal = decimal.Parse(productTable.CurrentRow.Cells[4].Value.ToString());
+            int index = productTable.CurrentRow.Index;
+
+            this.total -= subtotal;
+            this.cart.Rows.RemoveAt(index);
+
+            txtTotal.Text = this.total.ToString();
         }
     }
 }
