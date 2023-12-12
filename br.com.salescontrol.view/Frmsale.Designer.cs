@@ -246,6 +246,7 @@
             this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtPrice.Location = new System.Drawing.Point(318, 125);
             this.txtPrice.Name = "txtPrice";
+            this.txtPrice.ReadOnly = true;
             this.txtPrice.Size = new System.Drawing.Size(155, 26);
             this.txtPrice.TabIndex = 15;
             // 
@@ -346,6 +347,7 @@
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtTotal.Location = new System.Drawing.Point(247, 27);
             this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(187, 26);
             this.txtTotal.TabIndex = 6;
             // 
@@ -373,6 +375,7 @@
             this.btnPayment.TabIndex = 17;
             this.btnPayment.Text = "Pagamento";
             this.btnPayment.UseVisualStyleBackColor = false;
+            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
             // 
             // btnCancelSale
             // 

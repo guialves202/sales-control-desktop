@@ -15,8 +15,9 @@ namespace salesControl.br.com.salescontrol.view
 {
     public partial class Frmsale : Form
     {
-        public decimal total;
-        public DataTable cart = new DataTable();
+        private decimal total;
+        private DataTable cart = new DataTable();
+        private Customer customer = new Customer();
         public Frmsale()
         {
             InitializeComponent();
@@ -31,24 +32,22 @@ namespace salesControl.br.com.salescontrol.view
         {
             if (e.KeyChar != 13) { return; }
 
-            Customer customer = new Customer();
             CustomerDAO customerDAO = new CustomerDAO(new ConnectionFactory().getConnection());
 
-            customer = customerDAO.getCustomerByCPF(txtCPF.Text);
-            if (customer == null) { return; }
+            this.customer = customerDAO.getCustomerByCPF(txtCPF.Text);
+            if (this.customer == null) { return; }
 
-            txtCustomerName.Text = customer.name;
+            txtCustomerName.Text = this.customer.name;
         }
 
         private void btnSearchCEP_Click(object sender, EventArgs e)
         {
-            Customer customer = new Customer();
             CustomerDAO customerDAO = new CustomerDAO(new ConnectionFactory().getConnection());
 
-            customer = customerDAO.getCustomerByCPF(txtCPF.Text);
-            if (customer == null) { return; }
+            this.customer = customerDAO.getCustomerByCPF(txtCPF.Text);
+            if (this.customer == null) { return; }
 
-            txtCustomerName.Text = customer.name;
+            txtCustomerName.Text = this.customer.name;
         }
 
         private void btnSearchProductCode_Click(object sender, EventArgs e)
@@ -104,26 +103,35 @@ namespace salesControl.br.com.salescontrol.view
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            int code = int.Parse(txtCode.Text);
-            int qtd = int.Parse(txtQuantity.Text);
+            try
+            {
+                if (txtCode.Text == "" || txtQuantity.Text == "") { return; }
 
-            ProductDAO productDAO = new ProductDAO(new ConnectionFactory().getConnection());
-            Product product = productDAO.getProductById(code);
+                int code = int.Parse(txtCode.Text);
+                int qtd = int.Parse(txtQuantity.Text);
 
-            decimal subtotal = qtd * product.price;
+                ProductDAO productDAO = new ProductDAO(new ConnectionFactory().getConnection());
+                Product product = productDAO.getProductById(code);
 
-            this.total += subtotal;
+                decimal subtotal = qtd * product.price;
 
-            this.cart.Rows.Add(product.code, product.name, qtd, product.price, subtotal);
+                this.total += subtotal;
 
-            txtTotal.Text = total.ToString();
+                this.cart.Rows.Add(product.code, product.name, qtd, product.price, subtotal);
 
-            txtCode.Clear();
-            txtProductName.Clear();
-            txtQuantity.Clear();
-            txtPrice.Clear();
+                txtTotal.Text = total.ToString();
 
-            txtCode.Focus();
+                txtCode.Clear();
+                txtProductName.Clear();
+                txtQuantity.Clear();
+                txtPrice.Clear();
+
+                txtCode.Focus();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Erro ao adicionar produto: " + error);
+            }
         }
 
         private void Frmsale_Load(object sender, EventArgs e)
@@ -146,6 +154,14 @@ namespace salesControl.br.com.salescontrol.view
             this.cart.Rows.RemoveAt(index);
 
             txtTotal.Text = this.total.ToString();
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            Frmpayment frmpayment = new Frmpayment(this.customer, this.cart);
+
+            frmpayment.writeTotal(this.total);
+            frmpayment.ShowDialog();
         }
     }
 }
