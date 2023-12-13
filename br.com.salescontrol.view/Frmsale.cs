@@ -143,6 +143,8 @@ namespace salesControl.br.com.salescontrol.view
             this.cart.Columns.Add("Subtotal", typeof(decimal));
 
             productTable.DataSource = this.cart;
+
+            txtDate.Text = DateTime.Now.ToShortDateString();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -158,7 +160,8 @@ namespace salesControl.br.com.salescontrol.view
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-            Frmpayment frmpayment = new Frmpayment(this.customer, this.cart);
+            DateTime saleDate = DateTime.Parse(txtDate.Text);
+            Frmpayment frmpayment = new Frmpayment(this.customer, this.cart, saleDate);
 
             frmpayment.writeTotal(this.total);
             frmpayment.ShowDialog();

@@ -15,11 +15,14 @@ namespace salesControl.br.com.salescontrol.view
     {
         private Customer customer = new Customer();
         private DataTable cart = new DataTable();
-        public Frmpayment(Customer customer, DataTable cart)
+        private DateTime saleDate;
+
+        public Frmpayment(Customer customer, DataTable cart, DateTime saleDate)
         {
             InitializeComponent();
             this.customer = customer;
             this.cart = cart;
+            this.saleDate = saleDate;
         }
 
         private void btnFinishSale_Click(object sender, EventArgs e)
